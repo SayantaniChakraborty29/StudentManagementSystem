@@ -11,7 +11,7 @@ class Student {
     }
 
     void display(){
-        System.out.println("ID: " + id + "Name: " + name);
+        System.out.println("ID: " + id + "Name:   " + name);
     }
     }
    public class StudentManagement {
@@ -27,6 +27,17 @@ class Student {
 
             System.out.println("1. Add Student");
             System.out.println("2. View Students");
+            if(students.isEmpty()) {
+    System.out.println("No students found!");
+} else {
+    System.out.println("=== STUDENT LIST ===");
+
+    for(Student s : students) {
+        System.out.println("ID: " + s.id + " | Name: " + s.name);
+    }
+
+    System.out.println("Total Students: " + students.size());
+}
             System.out.println("3. Search Student");
             System.out.println("4. Delete Student");
             System.out.println("5. Exit");
