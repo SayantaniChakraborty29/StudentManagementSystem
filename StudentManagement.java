@@ -40,7 +40,8 @@ class Student {
 }
             System.out.println("3. Search Student");
             System.out.println("4. Delete Student");
-            System.out.println("5. Exit");
+            System.out.println("5. Total Students");
+            System.out.println("6. Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -108,8 +109,14 @@ class Student {
     break;
  
     case 5:
+                System.out.println("Total Students: "+ students.size());
+                break;
+
+
+    case 6:            
                 System.out.println("Thank You!");
                 return;
+
                 
                 default:
                     System.out.println("Invalid Choice!");
