@@ -18,6 +18,12 @@ class Student {
 
     public static void main(String[] args) {
 
+        System.out.println("=====================================");
+        System.out.println("STUDENT MANAGEMENT SYSTEM");
+
+        System.out.println("=====================================");
+         System.out.println("welcome to the Student Management System!");
+
         Scanner sc = new Scanner(System.in);
         ArrayList<Student> students = new ArrayList<>();
 
@@ -117,7 +123,7 @@ class Student {
                 System.out.println("Thank You!");
                 return;
 
-                
+
                 default:
                     System.out.println("Invalid Choice!");
             }
