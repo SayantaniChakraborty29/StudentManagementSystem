@@ -1,20 +1,47 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 class Student {
     int id;
     String name;
+    int marks;
 
-    Student(int id, String name) {
+    Student(int id, String name,int marks) {
         this.id = id;
         this.name =name;
+        this.marks=marks;
     }
+
+    public int getId(){
+        return id;
+    }
+
+    public String getName(){
+        return name;
+    }
+    public int getMarks(){
+        return marks;
+    }
+
 
     void display(){
         System.out.println("ID: " + id + "Name:   " + name);
+    }   
+}
+    
+public class StudentManagement {
+       
+    public static void sortStudentsByMarks(ArrayList<Student> students) {
+
+        Collections.sort(students, (s1, s2) -> s2.getMarks() - s1.getMarks());
+
+        System.out.println("Students sorted by marks:");
+
+        for (Student s : students) {
+            System.out.println(s.getId() + " " + s.getName() + " " + s.getMarks());
+        }
     }
-    }
-   public class StudentManagement {
 
     public static void main(String[] args) {
 
@@ -47,7 +74,8 @@ class Student {
             System.out.println("3. Search Student");
             System.out.println("4. Delete Student");
             System.out.println("5. Total Students");
-            System.out.println("6. Exit");
+            System.out.println("6. Sort Students by Marks");
+            System.out.println("7.Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -62,7 +90,10 @@ class Student {
                     System.out.print("Enter Name: ");
                     String name = sc.nextLine();
 
-                    students.add(new Student(id, name));
+                    System.out.println("Enter Marks: ");
+                    int marks = sc.nextInt();
+
+                    students.add(new Student(id, name,marks));
                     System.out.println("Student Added!");
                     break;
 
@@ -119,9 +150,14 @@ class Student {
                 break;
 
 
-    case 6:            
-                System.out.println("Thank You!");
-                return;
+    case 6:
+            sortStudentsByMarks(students);
+            break;
+
+
+    case 7:
+            System.out.println("Thank You!");
+            return;
 
 
                 default:
@@ -130,6 +166,6 @@ class Student {
         }
     }
 }
-            
+          
     
  
