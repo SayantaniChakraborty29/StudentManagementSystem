@@ -75,7 +75,8 @@ public class StudentManagement {
             System.out.println("4. Delete Student");
             System.out.println("5. Total Students");
             System.out.println("6. Sort Students by Marks");
-            System.out.println("7.Exit");
+            System.out.println("7.Update Student Name");
+            System.out.println("8.Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -154,8 +155,34 @@ public class StudentManagement {
             sortStudentsByMarks(students);
             break;
 
-
     case 7:
+            
+    System.out.print("Enter Student ID to Update: ");
+    int updateId = sc.nextInt();
+    sc.nextLine();
+
+    boolean updated = false;
+
+    for(Student s : students) {
+        if(s.id == updateId) {
+
+            System.out.print("Enter New Name: ");
+            String newName = sc.nextLine();
+
+            s.name = newName;
+
+            System.out.println("Student Updated Successfully!");
+            updated = true;
+            break;
+        }
+    }
+
+    if(!updated) {
+        System.out.println("Student Not Found!");
+    }
+    break;
+
+    case 8:
             System.out.println("Thank You!");
             return;
 
