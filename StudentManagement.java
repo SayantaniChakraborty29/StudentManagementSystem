@@ -93,6 +93,20 @@ public class StudentManagement {
 
                     System.out.println("Enter Marks: ");
                     int marks = sc.nextInt();
+                    
+                    boolean exists = false;
+
+                   for(Student s : students) {
+                   if(s.id == id) {
+                     exists = true;
+                         break;
+    }
+}
+
+                            if(exists) {
+                            System.out.println("Student ID already exists!");
+                               break;
+                              }
 
                     students.add(new Student(id, name,marks));
                     System.out.println("Student Added!");
