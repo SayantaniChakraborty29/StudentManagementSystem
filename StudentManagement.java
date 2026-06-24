@@ -76,7 +76,8 @@ public class StudentManagement {
             System.out.println("5. Total Students");
             System.out.println("6. Sort Students by Marks");
             System.out.println("7.Update Student Name");
-            System.out.println("8.Exit");
+            System.out.println("8.Show Topper and Average");
+            System.out.println("9.Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -197,6 +198,28 @@ public class StudentManagement {
     break;
 
     case 8:
+    if (students.isEmpty()) {
+        System.out.println("No students available!");
+        break;
+    }
+
+    int total = 0;
+    Student topper = students.get(0);
+
+    for (Student s : students) {
+        total += s.marks;
+        if (s.marks > topper.marks) {
+            topper = s;
+        }
+    }
+
+    double average = (double) total / students.size();
+
+    System.out.println("Topper: " + topper.name + " (" + topper.marks + ")");
+    System.out.println("Average: " + average);
+    break;
+
+    case 9:
             System.out.println("Thank You!");
             return;
 
