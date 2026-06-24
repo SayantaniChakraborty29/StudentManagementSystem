@@ -1,11 +1,31 @@
-# My Java Project
-
-This is a simple Java project created by me for learning purposes.
+# Student Management System(Java)
+This is a simple student management system built using Java.It allows users to manage student records with features like adding, deleting, updating, seraching, sorting and analyzing marks.
 
 ## Features
-- Basic Java program
-- Easy to understand code
-- Beginner friendly
+ - Add new student
+ - View all students
+ - Search student by ID
+ - Delete student by ID
+ - Update student name
+ - Sort students by marks
+ - Find topper
+ - Calculate average marks
+ - Total student count
+
+   
+## Tech Stack
+1. Java
+2. ArrayList
+3. OOP Concepts
+4. Collections Framework
+5. Scanner (for input)
+
+
+## Project Structure
+StudentManagement.java
+Student class (inside file)
+Main logic (menu-driven system)
+
 
 ## How to run
 1. Open project in VS Code / IntelliJ
