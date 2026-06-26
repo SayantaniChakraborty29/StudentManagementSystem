@@ -123,24 +123,27 @@ public class StudentManagement {
                     }
                     break;
 
-                case 3:
-                    System.out.print("Enter Student ID to Search: ");
-    int searchId = sc.nextInt();
+               case 3:
+    sc.nextLine();
+
+    System.out.print("Enter Student Name to Search: ");
+    String searchName = sc.nextLine();
 
     boolean found = false;
 
     for (Student s : students) {
-        if (s.id == searchId) {
+        if (s.getName().equalsIgnoreCase(searchName)) {
             s.display();
             found = true;
             break;
         }
     }
-        
+
     if (!found) {
         System.out.println("Student Not Found!");
     }
     break;
+    
                 case 4:
     System.out.print("Enter Student ID to Delete: ");
     int deleteId = sc.nextInt();
