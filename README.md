@@ -58,5 +58,12 @@ Main logic (menu-driven system)
 - Improve UI formatting  
 - Add update feature
 
+## 🚀 Future Improvements
+
+- File Handling
+- Database Integration (MySQL)
+- Login System
+- GUI using Java Swing/JavaFX
+  
 ## Author
 Sayantani Chakraborty
