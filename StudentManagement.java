@@ -85,33 +85,47 @@ public class StudentManagement {
             switch (choice) {
 
                 case 1:
-                    System.out.print("Enter ID: ");
-                    int id = sc.nextInt();
-                    sc.nextLine();
+                 
+             System.out.print("Enter ID: ");
+             int id = sc.nextInt();
+             sc.nextLine();
 
-                    System.out.print("Enter Name: ");
-                    String name = sc.nextLine();
+             System.out.print("Enter Name: ");
+             String name = sc.nextLine();
 
-                    System.out.println("Enter Marks: ");
-                    int marks = sc.nextInt();
-                    
-                    boolean exists = false;
 
-                   for(Student s : students) {
-                   if(s.id == id) {
-                     exists = true;
-                         break;
+    if (name.trim().isEmpty()) {
+        System.out.println("Name cannot be empty!");
+        break;
     }
-}
 
-                            if(exists) {
-                            System.out.println("Student ID already exists!");
-                               break;
-                              }
+    System.out.print("Enter Marks: ");
+    int marks = sc.nextInt();
 
-                    students.add(new Student(id, name,marks));
-                    System.out.println("Student Added!");
-                    break;
+    
+    if (marks < 0 || marks > 100) {
+        System.out.println("Marks must be between 0 and 100!");
+        break;
+    }
+
+    boolean exists = false;
+
+    for (Student s : students) {
+        if (s.id == id) {
+            exists = true;
+            break;
+        }
+    }
+
+    if (exists) {
+        System.out.println("Student ID already exists!");
+        break;
+    }
+
+    students.add(new Student(id, name, marks));
+    System.out.println("Student Added!");
+    break;
+
 
                 case 2:
                     if (students.isEmpty()) {
