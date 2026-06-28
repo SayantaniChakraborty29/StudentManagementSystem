@@ -84,15 +84,14 @@ public class StudentManagement {
 
             switch (choice) {
 
-                case 1:
-                 
-             System.out.print("Enter ID: ");
-             int id = sc.nextInt();
-             sc.nextLine();
+               case 1:
 
-             System.out.print("Enter Name: ");
-             String name = sc.nextLine();
+    System.out.print("Enter ID: ");
+    int id = sc.nextInt();
+    sc.nextLine();
 
+    System.out.print("Enter Name: ");
+    String name = sc.nextLine();
 
     if (name.trim().isEmpty()) {
         System.out.println("Name cannot be empty!");
@@ -102,12 +101,12 @@ public class StudentManagement {
     System.out.print("Enter Marks: ");
     int marks = sc.nextInt();
 
-    
     if (marks < 0 || marks > 100) {
         System.out.println("Marks must be between 0 and 100!");
         break;
     }
 
+    
     boolean exists = false;
 
     for (Student s : students) {
@@ -122,10 +121,11 @@ public class StudentManagement {
         break;
     }
 
+    
     students.add(new Student(id, name, marks));
     System.out.println("Student Added!");
-    break;
 
+    break;
 
                 case 2:
                     if (students.isEmpty()) {
