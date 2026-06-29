@@ -26,9 +26,10 @@ class Student {
 
 
     void display(){
-        System.out.println("ID: " + id + "Name:   " + name);
-    }   
+    System.out.println("ID: " + id + " | Name: " + name + " | Marks: " + marks);
 }
+    }   
+
     
 public class StudentManagement {
        
