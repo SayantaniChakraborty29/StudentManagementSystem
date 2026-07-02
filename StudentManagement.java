@@ -234,7 +234,7 @@ public class StudentManagement {
     double average = (double) total / students.size();
 
     System.out.println("Topper: " + topper.name + " (" + topper.marks + ")");
-    System.out.println("Average: " + average);
+    System.out.printf("Average: %.2f%n", average);
     break;
 
     case 9:
