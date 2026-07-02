@@ -237,7 +237,33 @@ public class StudentManagement {
     System.out.printf("Average: %.2f%n", average);
     break;
 
+
     case 9:
+
+    if (students.isEmpty()) {
+        System.out.println("No students available!");
+        break;
+    }
+
+    Student highest = students.get(0);
+    Student lowest = students.get(0);
+
+    for (Student s : students) {
+        if (s.marks > highest.marks) {
+            highest = s;
+        }
+
+        if (s.marks < lowest.marks) {
+            lowest = s;
+        }
+    }
+
+    System.out.println("Highest Marks: " + highest.name + " - " + highest.marks);
+    System.out.println("Lowest Marks: " + lowest.name + " - " + lowest.marks);
+
+    break;
+
+    case 10:
             System.out.println("Thank You!");
             return;
 
