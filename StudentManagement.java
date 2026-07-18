@@ -95,7 +95,8 @@ public static void displayPassFailCount(ArrayList<Student> students) {
             System.out.println("8.Show Topper and Average");
             System.out.println("9.Show Pass/Fail Count");
             System.out.println("10:Highest and Lowest Marks");
-            System.out.println("11:Exit");
+            System.out.println("11:Update Student Marks");
+            System.out.println("12:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -258,7 +259,7 @@ case 9:
     displayPassFailCount(students);
     break;
 
-    
+
     case 10:
 
     if (students.isEmpty()) {
@@ -284,7 +285,35 @@ case 9:
 
     break;
 
-    case 11:
+case 11:
+    System.out.print("Enter Student ID: ");
+    int markId = sc.nextInt();
+
+    boolean markUpdated = false;
+
+    for (Student s : students) {
+        if (s.id == markId) {
+            System.out.print("Enter New Marks: ");
+            int newMarks = sc.nextInt();
+
+            if (newMarks >= 0 && newMarks <= 100) {
+                s.marks = newMarks;
+                System.out.println("Marks Updated Successfully!");
+            } else {
+                System.out.println("Invalid Marks!");
+            }
+
+            markUpdated = true;
+            break;
+        }
+    }
+
+    if (!markUpdated) {
+        System.out.println("Student Not Found!");
+    }
+    break;
+
+    case 12:
             System.out.println("Thank You!");
             return;
 
