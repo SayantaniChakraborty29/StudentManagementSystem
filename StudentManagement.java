@@ -44,6 +44,21 @@ public class StudentManagement {
         }
     }
 
+public static void displayPassFailCount(ArrayList<Student> students) {
+    int pass = 0;
+    int fail = 0;
+
+    for (Student s : students) {
+        if (s.marks >= 40) {
+            pass++;
+        } else {
+            fail++;
+        }
+    }
+
+    System.out.println("Pass Students: " + pass);
+    System.out.println("Fail Students: " + fail);
+}
     public static void main(String[] args) {
 
         System.out.println("=====================================");
@@ -78,7 +93,9 @@ public class StudentManagement {
             System.out.println("6. Sort Students by Marks");
             System.out.println("7.Update Student Name");
             System.out.println("8.Show Topper and Average");
-            System.out.println("9.Exit");
+            System.out.println("9.Show Pass/Fail Count");
+            System.out.println("10:Highest and Lowest Marks");
+            System.out.println("11:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -237,8 +254,12 @@ public class StudentManagement {
     System.out.printf("Average: %.2f%n", average);
     break;
 
+case 9:
+    displayPassFailCount(students);
+    break;
 
-    case 9:
+    
+    case 10:
 
     if (students.isEmpty()) {
         System.out.println("No students available!");
@@ -263,7 +284,7 @@ public class StudentManagement {
 
     break;
 
-    case 10:
+    case 11:
             System.out.println("Thank You!");
             return;
 
