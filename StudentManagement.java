@@ -62,6 +62,27 @@ public static void displayPassFailCount(ArrayList<Student> students) {
     System.out.println("Fail Students: " + fail);
 }
 
+public static void displayRank(ArrayList<Student> students) {
+
+    if (students.isEmpty()) {
+        System.out.println("No students available!");
+        return;
+    }
+
+    ArrayList<Student> rankList = new ArrayList<>(students);
+
+    Collections.sort(rankList, (s1, s2) -> s2.marks - s1.marks);
+
+    System.out.println("===== STUDENT RANK LIST =====");
+
+    int rank = 1;
+
+    for (Student s : rankList) {
+        System.out.println("Rank " + rank + " : " + s.name + " - " + s.marks);
+        rank++;
+    }
+}
+
 public static void saveStudents(ArrayList<Student> students) {
     try {
         PrintWriter writer = new PrintWriter(new FileWriter("students.txt"));
@@ -141,7 +162,8 @@ public static void loadStudents(ArrayList<Student> students) {
             System.out.println("10:Highest and Lowest Marks");
             System.out.println("11:Update Student Marks");
             System.out.println("12:Save Students");
-            System.out.println("13:Exit");
+            System.out.println("13:Display Student Rank");
+            System.out.println("14:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -359,6 +381,14 @@ case 11:
     break;
 
     case 12:
+           saveStudents(students);
+           break;
+
+    case 13:
+           displayRank(students);
+           break;
+
+    case 14:
             System.out.println("Thank You!");
             return;
 
