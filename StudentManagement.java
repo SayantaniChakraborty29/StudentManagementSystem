@@ -1,6 +1,8 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+
 
 class Student {
     int id;
@@ -59,6 +61,48 @@ public static void displayPassFailCount(ArrayList<Student> students) {
     System.out.println("Pass Students: " + pass);
     System.out.println("Fail Students: " + fail);
 }
+
+public static void saveStudents(ArrayList<Student> students) {
+    try {
+        PrintWriter writer = new PrintWriter(new FileWriter("students.txt"));
+
+        for (Student s : students) {
+            writer.println(s.id + "," + s.name + "," + s.marks);
+        }
+
+        writer.close();
+        System.out.println("Students saved successfully!");
+
+    } catch (IOException e) {
+        System.out.println("Error saving file!");
+    }
+}
+
+
+public static void loadStudents(ArrayList<Student> students) {
+    try {
+        BufferedReader reader = new BufferedReader(new FileReader("students.txt"));
+
+        String line;
+
+        while ((line = reader.readLine()) != null) {
+            String[] data = line.split(",");
+
+            int id = Integer.parseInt(data[0]);
+            String name = data[1];
+            int marks = Integer.parseInt(data[2]);
+
+            students.add(new Student(id, name, marks));
+        }
+
+        reader.close();
+
+    } catch (IOException e) {
+        System.out.println("No saved data found.");
+    }
+}
+
+
     public static void main(String[] args) {
 
         System.out.println("=====================================");
@@ -96,7 +140,8 @@ public static void displayPassFailCount(ArrayList<Student> students) {
             System.out.println("9.Show Pass/Fail Count");
             System.out.println("10:Highest and Lowest Marks");
             System.out.println("11:Update Student Marks");
-            System.out.println("12:Exit");
+            System.out.println("12:Save Students");
+            System.out.println("13:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
