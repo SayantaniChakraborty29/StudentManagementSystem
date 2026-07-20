@@ -163,7 +163,8 @@ public static void loadStudents(ArrayList<Student> students) {
             System.out.println("11:Update Student Marks");
             System.out.println("12:Save Students");
             System.out.println("13:Display Student Rank");
-            System.out.println("14:Exit");
+            System.out.println("14: Load Students");
+            System.out.println("15:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -388,7 +389,15 @@ case 11:
            displayRank(students);
            break;
 
-    case 14:
+
+case 14:
+    students.clear();
+    loadStudents(students);
+    System.out.println("Students Loaded Successfully!");
+    break;
+
+
+    case 15:
             System.out.println("Thank You!");
             return;
 
