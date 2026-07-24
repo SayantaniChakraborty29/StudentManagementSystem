@@ -30,8 +30,23 @@ class Student {
     void display(){
     System.out.println("ID: " + id + " | Name: " + name + " | Marks: " + marks);
 }
-    }   
 
+public String getGrade() {
+    if (marks >= 90)
+        return "A+";
+    else if (marks >= 80)
+        return "A";
+    else if (marks >= 70)
+        return "B";
+    else if (marks >= 60)
+        return "C";
+    else if (marks >= 40)
+        return "D";
+    else
+        return "F";
+}
+
+    }  
     
 public class StudentManagement {
        
@@ -164,7 +179,8 @@ public static void loadStudents(ArrayList<Student> students) {
             System.out.println("12:Save Students");
             System.out.println("13:Display Student Rank");
             System.out.println("14: Load Students");
-            System.out.println("15:Exit");
+            System.out.println("15: Display student grades");
+            System.out.println("16:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -396,8 +412,27 @@ case 14:
     System.out.println("Students Loaded Successfully!");
     break;
 
+case 15:
 
-    case 15:
+    if (students.isEmpty()) {
+        System.out.println("No students available!");
+        break;
+    }
+
+    System.out.println("===== STUDENT GRADES =====");
+
+    for (Student s : students) {
+        System.out.println(
+            "ID: " + s.id +
+            " | Name: " + s.name +
+            " | Marks: " + s.marks +
+            " | Grade: " + s.getGrade()
+        );
+    }
+
+    break;
+
+    case 16:
             System.out.println("Thank You!");
             return;
 
