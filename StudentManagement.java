@@ -138,6 +138,35 @@ public static void loadStudents(ArrayList<Student> students) {
     }
 }
 
+public static void displayStatistics(ArrayList<Student> students) {
+
+    if (students.isEmpty()) {
+        System.out.println("No students available!");
+        return;
+    }
+
+    int total = 0;
+    int highest = students.get(0).marks;
+    int lowest = students.get(0).marks;
+
+    for (Student s : students) {
+        total += s.marks;
+
+        if (s.marks > highest)
+            highest = s.marks;
+
+        if (s.marks < lowest)
+            lowest = s.marks;
+    }
+
+    double average = (double) total / students.size();
+
+    System.out.println("===== CLASS STATISTICS =====");
+    System.out.println("Total Students : " + students.size());
+    System.out.println("Highest Marks  : " + highest);
+    System.out.println("Lowest Marks   : " + lowest);
+    System.out.printf("Average Marks  : %.2f%n", average);
+}
 
     public static void main(String[] args) {
 
@@ -180,7 +209,8 @@ public static void loadStudents(ArrayList<Student> students) {
             System.out.println("13:Display Student Rank");
             System.out.println("14: Load Students");
             System.out.println("15: Display student grades");
-            System.out.println("16:Exit");
+            System.out.println("16:Display Class Statistics");
+            System.out.println("17:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -432,7 +462,11 @@ case 15:
 
     break;
 
-    case 16:
+case 17:
+    displayStatistics(students);
+    break;
+
+    case 18:
             System.out.println("Thank You!");
             return;
 
