@@ -462,11 +462,11 @@ case 15:
 
     break;
 
-case 17:
+case 16:
     displayStatistics(students);
     break;
 
-    case 18:
+    case 17:
             System.out.println("Thank You!");
             return;
 
