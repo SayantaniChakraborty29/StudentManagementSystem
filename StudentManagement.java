@@ -61,6 +61,23 @@ public class StudentManagement {
         }
     }
 
+public static void sortStudentsByName(ArrayList<Student> students) {
+
+    if (students.isEmpty()) {
+        System.out.println("No students available!");
+        return;
+    }
+
+    Collections.sort(students, (s1, s2) -> s1.name.compareToIgnoreCase(s2.name));
+
+    System.out.println("===== STUDENTS (A-Z) =====");
+
+    for (Student s : students) {
+        s.display();
+    }
+}
+
+
 public static void displayPassFailCount(ArrayList<Student> students) {
     int pass = 0;
     int fail = 0;
@@ -210,7 +227,8 @@ public static void displayStatistics(ArrayList<Student> students) {
             System.out.println("14: Load Students");
             System.out.println("15: Display student grades");
             System.out.println("16:Display Class Statistics");
-            System.out.println("17:Exit");
+            System.out.println("17: Sort Students by Name");
+            System.out.println("18:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -466,7 +484,11 @@ case 16:
     displayStatistics(students);
     break;
 
-    case 17:
+case 17:
+    sortStudentsByName(students);
+    break;
+
+    case 18:
             System.out.println("Thank You!");
             return;
 
