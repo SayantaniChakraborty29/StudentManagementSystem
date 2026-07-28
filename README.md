@@ -1,18 +1,53 @@
-# Student Management System(Java)
-This is a simple student management system built using Java.It allows users to manage student records with features like adding, deleting, updating, seraching, sorting and analyzing marks.
+# 🎓 Student Management System
 
-## Features
- - Add new student
- - View all students
- - Search student by ID
- - Delete student by ID
- - Update student name
- - Sort students by marks
- - Find topper
- - Calculate average marks
- - Total student count
+A Java console-based Student Management System that helps manage student records efficiently.
 
-   
+## ✨ Features
+
+- ➕ Add Student
+- 👀 View Students
+- 🔍 Search Student
+- ❌ Delete Student
+- ✏️ Update Name
+- 📝 Update Marks
+- 📊 Show Total Students
+- 🏆 Display Rank List
+- 📈 Sort by Marks
+- 🔤 Sort by Name
+- 🎯 Grade Calculation
+- ✅ Pass/Fail Count
+- 📉 Class Statistics
+- 💾 Save Students to File
+- 📂 Load Students from File
+
+## 🛠️ Technologies Used
+
+- Java
+- ArrayList
+- Collections Framework
+- File Handling
+- VS Code
+
+## 🚀 How to Run
+
+1. Clone the repository.
+2. Compile the program:
+   ```bash
+   javac StudentManagement.java
+   ```
+3. Run the program:
+   ```bash
+   java StudentManagement
+   ```
+
+## 📌 Future Improvements
+
+- GUI Version
+- Database Integration (MySQL)
+- Login System
+- Attendance Management
+
+
 ## Tech Stack
 1. Java
 2. ArrayList
