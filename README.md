@@ -19,14 +19,7 @@ A Java console-based Student Management System that helps manage student records
 - 📉 Class Statistics
 - 💾 Save Students to File
 - 📂 Load Students from File
-
-## 🛠️ Technologies Used
-
-- Java
-- ArrayList
-- Collections Framework
-- File Handling
-- VS Code
+  
 
 ## 🚀 How to Run
 
@@ -38,14 +31,6 @@ A Java console-based Student Management System that helps manage student records
 3. Run the program:
    ```bash
    java StudentManagement
-   ```
-
-## 📌 Future Improvements
-
-- GUI Version
-- Database Integration (MySQL)
-- Login System
-- Attendance Management
 
 
 ## Tech Stack
@@ -60,12 +45,6 @@ A Java console-based Student Management System that helps manage student records
 StudentManagement.java
 Student class (inside file)
 Main logic (menu-driven system)
-
-
-## How to run
-1. Open project in VS Code / IntelliJ
-2. Compile the Java file
-3. Run the main class
 
 
 ## 🤝 How to Contribute
