@@ -185,6 +185,46 @@ public static void displayStatistics(ArrayList<Student> students) {
     System.out.printf("Average Marks  : %.2f%n", average);
 }
 
+public static void displayGradeCount(ArrayList<Student> students) {
+
+    if (students.isEmpty()) {
+        System.out.println("No students available!");
+        return;
+    }
+
+    int aPlus = 0, a = 0, b = 0, c = 0, d = 0, f = 0;
+
+    for (Student s : students) {
+        switch (s.getGrade()) {
+            case "A+":
+                aPlus++;
+                break;
+            case "A":
+                a++;
+                break;
+            case "B":
+                b++;
+                break;
+            case "C":
+                c++;
+                break;
+            case "D":
+                d++;
+                break;
+            default:
+                f++;
+        }
+    }
+
+    System.out.println("===== GRADE COUNT =====");
+    System.out.println("A+ : " + aPlus);
+    System.out.println("A  : " + a);
+    System.out.println("B  : " + b);
+    System.out.println("C  : " + c);
+    System.out.println("D  : " + d);
+    System.out.println("F  : " + f);
+}
+
     public static void main(String[] args) {
 
         System.out.println("=====================================");
@@ -228,7 +268,8 @@ public static void displayStatistics(ArrayList<Student> students) {
             System.out.println("15: Display student grades");
             System.out.println("16:Display Class Statistics");
             System.out.println("17: Sort Students by Name");
-            System.out.println("18:Exit");
+            System.out.println("18:Display Grade Count");
+            System.out.println("19:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -488,7 +529,11 @@ case 17:
     sortStudentsByName(students);
     break;
 
-    case 18:
+case 18:
+displayGradeCount(students);
+break;
+
+    case 19:
             System.out.println("Thank You!");
             return;
 
