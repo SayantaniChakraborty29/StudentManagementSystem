@@ -78,6 +78,12 @@ Main logic (menu-driven system)
 - Database Integration (MySQL)
 - Login System
 - GUI using Java Swing/JavaFX
+
+## Upcoming Features
+- Show student percentage
+- Attendance management
+- Export records to CV
+- Better input validation and error handling
   
 ## Author
 Sayantani Chakraborty
