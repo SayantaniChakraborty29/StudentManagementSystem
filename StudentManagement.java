@@ -225,6 +225,21 @@ public static void displayGradeCount(ArrayList<Student> students) {
     System.out.println("F  : " + f);
 }
 
+public static void showPercentage(ArrayList<Student> students) {
+    if (students.isEmpty()) {
+        System.out.println("No students available!");
+        return;
+    }
+
+    for (Student s : students) {
+        double percentage = (s.marks / 100.0) * 100;
+        System.out.println("ID: " + s.id +
+                           " | Name: " + s.name +
+                           " | Percentage: " + percentage + "%");
+    }
+}
+
+
     public static void main(String[] args) {
 
         System.out.println("=====================================");
@@ -269,7 +284,8 @@ public static void displayGradeCount(ArrayList<Student> students) {
             System.out.println("16:Display Class Statistics");
             System.out.println("17: Sort Students by Name");
             System.out.println("18:Display Grade Count");
-            System.out.println("19:Exit");
+            System.out.println("19:Show Percentage");
+            System.out.println("20:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -533,7 +549,11 @@ case 18:
 displayGradeCount(students);
 break;
 
-    case 19:
+case 19:
+showPercentage(students);
+break;
+
+    case 20:
             System.out.println("Thank You!");
             return;
 
