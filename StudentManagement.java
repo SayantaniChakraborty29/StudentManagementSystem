@@ -231,11 +231,13 @@ public static void showPercentage(ArrayList<Student> students) {
         return;
     }
 
+    System.out.println("===== STUDENT PERCENTAGE =====");
+
     for (Student s : students) {
-        double percentage = (s.marks / 100.0) * 100;
-        System.out.println("ID: " + s.id +
-                           " | Name: " + s.name +
-                           " | Percentage: " + percentage + "%");
+        double percentage = s.marks;
+
+        System.out.printf("ID: %d | Name: %s | Percentage: %.2f%%%n",
+                s.id, s.name, percentage);
     }
 }
 
