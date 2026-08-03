@@ -78,6 +78,12 @@ Main logic (menu-driven system)
 - Database Integration (MySQL)
 - Login System
 - GUI using Java Swing/JavaFX
+- Show percentage
+- Input validation
+- Topper and lowest scorer
+- Attendance Management
+- Export to CSV
+- Student Report Card
 
 ## Upcoming Features
 - Show student percentage
