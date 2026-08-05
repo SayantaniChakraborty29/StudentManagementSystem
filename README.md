@@ -90,6 +90,12 @@ Main logic (menu-driven system)
 - Attendance management
 - Export records to CV
 - Better input validation and error handling
+
+## 📁 Project Structure
+
+StudentManagementSystem/
+├── StudentManagement.java
+└── README.md
   
 ## Author
 Sayantani Chakraborty
