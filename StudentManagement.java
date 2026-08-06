@@ -299,6 +299,11 @@ public static void showPercentage(ArrayList<Student> students) {
     System.out.print("Enter ID: ");
     int id = sc.nextInt();
     sc.nextLine();
+     
+    if (id <= 0) {
+    System.out.println("ID must be greater than 0!");
+    break;
+}
 
     System.out.print("Enter Name: ");
     String name = sc.nextLine();
