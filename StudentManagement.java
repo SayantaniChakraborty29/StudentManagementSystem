@@ -243,6 +243,40 @@ public static void showPercentage(ArrayList<Student> students) {
 }
 
 
+public static void searchByMarksRange(ArrayList<Student> students, Scanner sc) {
+
+    if (students.isEmpty()) {
+        System.out.println("No students available!");
+        return;
+    }
+
+    System.out.print("Enter minimum marks: ");
+    int min = sc.nextInt();
+
+    System.out.print("Enter maximum marks: ");
+    int max = sc.nextInt();
+
+    if (min < 0 || max > 100 || min > max) {
+        System.out.println("Invalid marks range!");
+        return;
+    }
+
+    boolean found = false;
+
+    System.out.println("===== STUDENTS IN MARKS RANGE =====");
+
+    for (Student s : students) {
+        if (s.marks >= min && s.marks <= max) {
+            s.display();
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("No students found in this marks range.");
+    }
+}
+
     public static void main(String[] args) {
 
         System.out.println("=====================================");
@@ -288,7 +322,8 @@ public static void showPercentage(ArrayList<Student> students) {
             System.out.println("17: Sort Students by Name");
             System.out.println("18:Display Grade Count");
             System.out.println("19:Show Percentage");
-            System.out.println("20:Exit");
+            System.out.println("20:Search by Marks Range");
+            System.out.println("21:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -561,7 +596,14 @@ case 19:
 showPercentage(students);
 break;
 
-    case 20:
+
+case 20:
+searchByMarksRange(students,sc);
+break;
+
+
+
+    case 21:
             System.out.println("Thank You!");
             return;
 
