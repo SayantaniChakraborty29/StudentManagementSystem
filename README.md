@@ -96,6 +96,15 @@ Main logic (menu-driven system)
 StudentManagementSystem/
 ├── StudentManagement.java
 └── README.md
+
+## 🐛 Good First Issues
+Some beginner-friendly improvements:
+Improve input validation
+Improve console UI formatting
+Add percentage calculation
+Add grade filtering
+Add marks-range search
+Improve error handling
   
 ## Author
 Sayantani Chakraborty
