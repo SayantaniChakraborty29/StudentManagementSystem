@@ -62,6 +62,42 @@ public class StudentManagement {
         }
     }
 
+
+public static void filterByGrade(ArrayList<Student> students) {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Enter grade (A/B/C/F): ");
+    String grade = sc.nextLine().toUpperCase();
+
+    boolean found = false;
+
+    for (Student s : students) {
+        String studentGrade;
+
+        if (s.marks >= 80)
+            studentGrade = "A";
+        else if (s.marks >= 60)
+            studentGrade = "B";
+        else if (s.marks >= 40)
+            studentGrade = "C";
+        else
+            studentGrade = "F";
+
+        if (studentGrade.equals(grade)) {
+            System.out.println("ID: " + s.id +
+                    ", Name: " + s.name +
+                    ", Marks: " + s.marks +
+                    ", Grade: " + studentGrade);
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("No students found with grade " + grade);
+    }
+}
+
+
 public static void sortStudentsByName(ArrayList<Student> students) {
 
     if (students.isEmpty()) {
@@ -323,7 +359,8 @@ public static void searchByMarksRange(ArrayList<Student> students, Scanner sc) {
             System.out.println("18:Display Grade Count");
             System.out.println("19:Show Percentage");
             System.out.println("20:Search by Marks Range");
-            System.out.println("21:Exit");
+            System.out.println("21:Filter Students by Grade");
+            System.out.println("22:Exit");
             System.out.print("Enter Choice: ");
 
             int choice = sc.nextInt();
@@ -602,8 +639,12 @@ searchByMarksRange(students,sc);
 break;
 
 
+case 21:
+filterByGrade(students);
+break;
 
-    case 21:
+
+    case 22:
             System.out.println("Thank You!");
             return;
 
